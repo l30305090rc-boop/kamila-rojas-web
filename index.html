@@ -1,0 +1,1449 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kamila Rojas · Importmoda</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..900&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fdfaf6; --bg-soft:#f7f1e9; --paper:#f5efe8;
+  --ink:#0f0c0a; --muted:#8a7f74;
+  --rose:#e94f7c; --rose-deep:#b82e57; --blush:#fce8ee;
+  --border:rgba(15,12,10,0.08);
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'DM Sans',system-ui,sans-serif;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--sans);background:var(--bg);color:var(--ink);
+  line-height:1.5;overflow-x:hidden;-webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:400;letter-spacing:-0.02em;line-height:1}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+
+/* ====== ANNOUNCEMENT ====== */
+.announce{
+  background:var(--ink);color:var(--bg);
+  text-align:center;padding:0.7rem 1rem;
+  font-size:0.72rem;letter-spacing:1.5px;
+  font-weight:500;
+}
+.announce b{color:var(--rose);font-weight:600}
+
+/* ====== HEADER ====== */
+.header{
+  position:sticky;top:0;z-index:900;
+  background:rgba(253,250,246,0.94);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border);
+  padding:1.1rem 2.2rem;
+  display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:1.5rem;
+}
+.header-left{display:flex;gap:1.8rem;font-size:0.78rem;font-weight:500;letter-spacing:1px}
+.header-left a{transition:color .2s}
+.header-left a:hover{color:var(--rose)}
+.logo{
+  display:flex;flex-direction:column;align-items:center;line-height:1;
+  text-align:center;
+}
+.logo-main{
+  font-family:var(--serif);
+  font-size:1.35rem;font-weight:500;letter-spacing:0.02em;
+}
+.logo-main em{font-style:italic;color:var(--rose)}
+.logo-sub{
+  font-family:var(--sans);font-size:0.55rem;font-weight:600;
+  letter-spacing:4px;color:var(--muted);text-transform:uppercase;
+  margin-top:5px;
+}
+.header-right{display:flex;justify-content:flex-end;align-items:center;gap:1.3rem;font-size:0.78rem}
+.rate-pill{color:var(--muted);font-size:0.72rem;letter-spacing:0.5px}
+.rate-pill b{color:var(--ink);font-weight:600}
+.cart-btn{
+  display:flex;align-items:center;gap:0.4rem;
+  padding:0.55rem 1.1rem;
+  background:var(--ink);color:var(--bg);
+  font-size:0.72rem;font-weight:600;
+  letter-spacing:1.5px;
+  border-radius:100px;
+  transition:background .2s;
+}
+.cart-btn:hover{background:var(--rose)}
+.cart-count{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-width:18px;height:18px;padding:0 5px;
+  background:var(--rose);color:#fff;
+  border-radius:9px;font-size:0.62rem;
+}
+
+/* ====== HERO ====== */
+.hero{
+  max-width:1500px;margin:0 auto;
+  padding:5rem 2.2rem 6rem;
+  display:grid;grid-template-columns:1.05fr 1fr;
+  gap:4rem;align-items:center;
+  position:relative;
+}
+.hero-text{position:relative;z-index:2;max-width:560px}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:0.6rem;
+  font-size:0.72rem;font-weight:600;
+  letter-spacing:3px;text-transform:uppercase;
+  color:var(--rose);margin-bottom:1.6rem;
+}
+.hero-eyebrow::before{
+  content:'';width:28px;height:1px;background:var(--rose);
+}
+.hero h1{
+  font-family:var(--serif);
+  font-size:clamp(3.2rem, 6.5vw, 6rem);
+  line-height:0.95;
+  margin-bottom:1.8rem;
+  letter-spacing:-0.03em;
+}
+.hero h1 em{
+  font-style:italic;
+  font-weight:300;
+  color:var(--rose);
+}
+.hero-sub{
+  font-size:1.02rem;font-weight:300;
+  color:var(--muted);max-width:420px;
+  margin-bottom:2.2rem;line-height:1.7;
+}
+.hero-actions{display:flex;gap:0.8rem;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  padding:1rem 1.9rem;
+  font-size:0.75rem;font-weight:600;
+  letter-spacing:1.5px;text-transform:uppercase;
+  border-radius:100px;
+  transition:all .25s ease;
+  border:1px solid transparent;
+}
+.btn-dark{
+  background:var(--ink);color:var(--bg);
+}
+.btn-dark:hover{background:var(--rose);transform:translateY(-2px)}
+.btn-ghost{
+  background:transparent;color:var(--ink);
+  border-color:var(--ink);
+}
+.btn-ghost:hover{background:var(--ink);color:var(--bg)}
+
+/* Hero image with 3D */
+.hero-visual{position:relative}
+.hero-image-wrap{
+  position:relative;
+  aspect-ratio:4/5;
+  perspective:1400px;
+}
+.hero-image{
+  position:relative;
+  width:100%;height:100%;
+  border-radius:4px;
+  overflow:hidden;
+  box-shadow:0 40px 80px -20px rgba(15,12,10,0.25);
+  transform-style:preserve-3d;
+  transition:transform .6s cubic-bezier(.2,.9,.3,1);
+  animation:heroFloat 8s ease-in-out infinite;
+  background:var(--paper);
+}
+@keyframes heroFloat{
+  0%,100%{transform:rotateY(-1.5deg) rotateX(1deg) translateY(0)}
+  50%{transform:rotateY(1.5deg) rotateX(-1deg) translateY(-10px)}
+}
+.hero-image img{width:100%;height:100%;object-fit:cover}
+.hero-image::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg, transparent 60%, rgba(15,12,10,0.35));
+  pointer-events:none;
+}
+.hero-badge{
+  position:absolute;bottom:1.5rem;left:1.5rem;z-index:2;
+  display:inline-flex;align-items:center;gap:0.5rem;
+  background:rgba(255,255,255,0.95);
+  backdrop-filter:blur(8px);
+  padding:0.55rem 1rem;
+  border-radius:100px;
+  font-size:0.7rem;font-weight:600;letter-spacing:1px;
+  text-transform:uppercase;
+}
+.hero-badge::before{
+  content:'';width:6px;height:6px;
+  background:var(--rose);border-radius:50%;
+  animation:pulse 2s ease-in-out infinite;
+}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.6;transform:scale(0.8)}}
+
+/* Rotating stamp */
+.hero-stamp{
+  position:absolute;
+  top:-30px;right:-30px;
+  width:130px;height:130px;
+  z-index:3;
+  animation:spin 20s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hero-stamp svg{width:100%;height:100%}
+
+/* Orbs behind */
+.hero-orb{
+  position:absolute;
+  border-radius:50%;
+  filter:blur(80px);
+  opacity:0.55;
+  pointer-events:none;
+  z-index:1;
+}
+.hero-orb-1{
+  width:320px;height:320px;
+  background:var(--rose);
+  top:-80px;right:-60px;
+  animation:orbFloat 15s ease-in-out infinite;
+}
+.hero-orb-2{
+  width:260px;height:260px;
+  background:#f4c5b9;
+  bottom:-60px;left:-40px;
+  animation:orbFloat 18s ease-in-out infinite reverse;
+}
+@keyframes orbFloat{
+  0%,100%{transform:translate(0,0) scale(1)}
+  50%{transform:translate(30px,-20px) scale(1.1)}
+}
+
+/* ====== MARQUEE ====== */
+.marquee{
+  padding:1.8rem 0;
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  overflow:hidden;white-space:nowrap;
+  background:var(--bg);
+}
+.marquee-track{
+  display:inline-block;
+  animation:marquee 45s linear infinite;
+}
+.marquee-track span{
+  font-family:var(--serif);
+  font-size:1.6rem;
+  font-style:italic;
+  font-weight:300;
+  margin:0 2rem;
+  color:var(--ink);
+}
+.marquee-track span::after{
+  content:'✦';margin-left:2rem;
+  color:var(--rose);font-style:normal;
+}
+@keyframes marquee{to{transform:translateX(-50%)}}
+
+/* ====== COLLECTION ====== */
+.collection{
+  max-width:1500px;margin:0 auto;
+  padding:5rem 2.2rem 6rem;
+}
+.collection-head{
+  display:flex;justify-content:space-between;align-items:flex-end;
+  flex-wrap:wrap;gap:1.5rem;
+  margin-bottom:3rem;
+  padding-bottom:1.5rem;
+  border-bottom:1px solid var(--border);
+}
+.collection-head-left h2{
+  font-family:var(--serif);
+  font-size:clamp(2.5rem, 5vw, 4rem);
+  line-height:1;
+  letter-spacing:-0.03em;
+}
+.collection-head-left h2 em{font-style:italic;font-weight:300;color:var(--rose)}
+.collection-head-left .eyebrow{
+  font-size:0.72rem;font-weight:600;
+  letter-spacing:3px;text-transform:uppercase;
+  color:var(--rose);margin-bottom:0.8rem;
+}
+.collection-head-right{
+  display:flex;gap:0.4rem;flex-wrap:wrap;
+}
+.filter-btn{
+  padding:0.6rem 1.2rem;
+  font-size:0.7rem;font-weight:500;
+  letter-spacing:1.5px;text-transform:uppercase;
+  border:1px solid var(--border);
+  border-radius:100px;
+  color:var(--muted);
+  transition:all .2s;
+}
+.filter-btn:hover{border-color:var(--ink);color:var(--ink)}
+.filter-btn.active{
+  background:var(--ink);color:var(--bg);border-color:var(--ink);
+}
+
+/* ====== PRODUCT GRID ====== */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(280px, 1fr));
+  gap:2.5rem 1.8rem;
+}
+.product{
+  position:relative;
+  opacity:0;transform:translateY(30px);
+  transition:opacity .7s,transform .7s;
+  cursor:pointer;
+}
+.product.in{opacity:1;transform:translateY(0)}
+.product-media{
+  position:relative;
+  aspect-ratio:3/4;
+  overflow:hidden;
+  background:var(--paper);
+  border-radius:3px;
+  margin-bottom:1rem;
+}
+.product-media img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform 1.2s cubic-bezier(.2,.9,.3,1);
+}
+.product:hover .product-media img{transform:scale(1.06)}
+.product-tag{
+  position:absolute;top:1rem;left:1rem;
+  padding:0.4rem 0.85rem;
+  background:var(--bg);
+  color:var(--ink);
+  font-size:0.62rem;font-weight:600;
+  letter-spacing:1.8px;text-transform:uppercase;
+  border-radius:100px;
+  z-index:2;
+}
+.product-tag.new{background:var(--rose);color:#fff}
+.product-overlay{
+  position:absolute;bottom:0;left:0;right:0;
+  padding:1rem;
+  background:linear-gradient(180deg, transparent, rgba(15,12,10,0.4));
+  display:flex;justify-content:center;
+  transform:translateY(100%);
+  transition:transform .35s cubic-bezier(.2,.9,.3,1);
+  opacity:0;
+}
+.product:hover .product-overlay{transform:translateY(0);opacity:1}
+.product-add{
+  padding:0.85rem 1.6rem;
+  background:var(--bg);color:var(--ink);
+  font-size:0.68rem;font-weight:600;
+  letter-spacing:2px;text-transform:uppercase;
+  border-radius:100px;
+  transition:all .25s;
+  width:100%;
+  max-width:220px;
+}
+.product-add:hover{background:var(--rose);color:#fff}
+
+.product-info h3{
+  font-family:var(--serif);
+  font-size:1.15rem;
+  font-weight:400;
+  font-style:italic;
+  margin-bottom:0.4rem;
+  line-height:1.3;
+  letter-spacing:0;
+  transition:color .2s;
+}
+.product:hover .product-info h3{color:var(--rose)}
+.product-price{
+  font-size:0.88rem;
+  color:var(--muted);
+  display:flex;align-items:baseline;gap:0.6rem;flex-wrap:wrap;
+}
+.product-price .usd{color:var(--ink);font-weight:600}
+.product-price .bs{font-size:0.8rem}
+
+/* ====== EDITORIAL ====== */
+.editorial{
+  background:var(--paper);
+  padding:6rem 2.2rem;
+  margin:4rem 0;
+}
+.editorial-inner{
+  max-width:1300px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;
+}
+.editorial-image{
+  aspect-ratio:4/5;
+  border-radius:3px;
+  overflow:hidden;
+  box-shadow:0 30px 60px -20px rgba(15,12,10,0.2);
+  position:relative;
+}
+.editorial-image img{width:100%;height:100%;object-fit:cover}
+.editorial-text .eyebrow{
+  font-size:0.72rem;font-weight:600;
+  letter-spacing:3px;text-transform:uppercase;
+  color:var(--rose);margin-bottom:1.5rem;
+}
+.editorial-text blockquote{
+  font-family:var(--serif);
+  font-size:clamp(2rem, 3.5vw, 3rem);
+  font-style:italic;
+  font-weight:300;
+  line-height:1.15;
+  letter-spacing:-0.02em;
+  margin-bottom:2rem;
+}
+.editorial-text blockquote::before{content:'“';color:var(--rose);font-size:4rem;line-height:0;vertical-align:-0.4em;margin-right:0.1em}
+.editorial-text p{
+  font-size:0.95rem;color:var(--muted);line-height:1.8;
+  margin-bottom:2rem;max-width:420px;
+}
+
+/* ====== DELIVERY ====== */
+.delivery{
+  max-width:1500px;margin:0 auto;
+  padding:6rem 2.2rem;
+}
+.delivery-head{
+  text-align:center;margin-bottom:4rem;
+}
+.delivery-head .eyebrow{
+  font-size:0.72rem;font-weight:600;
+  letter-spacing:3px;text-transform:uppercase;
+  color:var(--rose);margin-bottom:1rem;
+}
+.delivery-head h2{
+  font-family:var(--serif);
+  font-size:clamp(2.5rem, 5.5vw, 4.5rem);
+  line-height:1;
+  letter-spacing:-0.03em;
+}
+.delivery-head h2 em{font-style:italic;font-weight:300;color:var(--rose)}
+.delivery-steps{
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:2rem;
+}
+.step{
+  position:relative;
+  padding-top:2rem;
+  border-top:1px solid var(--ink);
+}
+.step-num{
+  font-family:var(--serif);
+  font-size:0.9rem;
+  font-style:italic;
+  color:var(--rose);
+  margin-bottom:1.2rem;
+  font-weight:400;
+}
+.step h3{
+  font-family:var(--serif);
+  font-size:1.3rem;
+  font-weight:400;
+  margin-bottom:0.8rem;
+  line-height:1.2;
+}
+.step p{
+  font-size:0.85rem;color:var(--muted);line-height:1.7;
+}
+
+/* ====== FOOTER ====== */
+.footer{
+  background:var(--ink);color:var(--bg);
+  padding:4rem 2.2rem 2rem;
+  margin-top:4rem;
+}
+.footer-inner{max-width:1500px;margin:0 auto}
+.footer-top{
+  display:grid;
+  grid-template-columns:1.5fr 1fr 1fr 1fr;
+  gap:3rem;
+  padding-bottom:3rem;
+  border-bottom:1px solid rgba(253,250,246,0.15);
+}
+.footer-brand .logo-main{
+  font-family:var(--serif);
+  font-size:1.5rem;
+  color:var(--bg);
+  margin-bottom:0.4rem;
+}
+.footer-brand .logo-main em{color:var(--rose)}
+.footer-brand .logo-sub{color:var(--rose)}
+.footer-brand p{
+  font-size:0.85rem;
+  color:rgba(253,250,246,0.6);
+  line-height:1.7;
+  margin-top:1.2rem;
+  max-width:280px;
+}
+.footer-col h4{
+  font-family:var(--sans);
+  font-size:0.68rem;
+  font-weight:600;
+  letter-spacing:2.5px;
+  text-transform:uppercase;
+  color:var(--rose);
+  margin-bottom:1.2rem;
+}
+.footer-col ul{list-style:none}
+.footer-col li{
+  font-size:0.85rem;
+  color:rgba(253,250,246,0.65);
+  margin-bottom:0.6rem;
+  line-height:1.5;
+}
+.footer-col li b{color:var(--bg);font-weight:500}
+.footer-bottom{
+  padding-top:2rem;
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;
+  font-size:0.72rem;
+  color:rgba(253,250,246,0.5);
+}
+.footer-bottom a{color:var(--rose)}
+
+/* ====== CART DRAWER ====== */
+.overlay{
+  position:fixed;inset:0;
+  background:rgba(15,12,10,0.5);
+  backdrop-filter:blur(4px);
+  opacity:0;pointer-events:none;transition:opacity .3s;
+  z-index:990;
+}
+.overlay.open{opacity:1;pointer-events:auto}
+.cart{
+  position:fixed;top:0;right:0;
+  width:min(440px,100%);height:100vh;
+  background:var(--bg);
+  border-left:1px solid var(--border);
+  z-index:1000;
+  display:flex;flex-direction:column;
+  transform:translateX(100%);
+  transition:transform .35s cubic-bezier(.2,.9,.3,1);
+}
+.cart.open{transform:translateX(0)}
+.cart-head{
+  padding:1.8rem 1.8rem 1.2rem;
+  border-bottom:1px solid var(--border);
+  display:flex;justify-content:space-between;align-items:center;
+}
+.cart-head h3{
+  font-family:var(--serif);
+  font-size:1.5rem;
+  font-style:italic;
+  font-weight:400;
+}
+.cart-close{
+  width:36px;height:36px;
+  display:flex;align-items:center;justify-content:center;
+  border-radius:50%;
+  border:1px solid var(--border);
+  font-size:0.9rem;
+  transition:all .2s;
+}
+.cart-close:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.cart-items{
+  flex:1;overflow-y:auto;
+  padding:1.4rem 1.8rem;
+  display:flex;flex-direction:column;gap:1rem;
+}
+.cart-empty{
+  text-align:center;padding:4rem 1rem;color:var(--muted);
+}
+.cart-empty h4{
+  font-family:var(--serif);
+  font-size:1.4rem;
+  font-style:italic;
+  font-weight:400;
+  color:var(--ink);
+  margin-bottom:0.6rem;
+}
+.cart-empty p{font-size:0.85rem}
+.ci{
+  display:grid;
+  grid-template-columns:70px 1fr auto;
+  gap:0.9rem;
+  padding-bottom:1rem;
+  border-bottom:1px solid var(--border);
+  align-items:start;
+}
+.ci img{
+  width:70px;height:88px;
+  object-fit:cover;
+  border-radius:2px;
+}
+.ci h4{
+  font-family:var(--serif);
+  font-style:italic;
+  font-size:1rem;
+  font-weight:400;
+  margin-bottom:0.3rem;
+  line-height:1.3;
+}
+.ci .cp{font-size:0.75rem;color:var(--muted);margin-bottom:0.5rem}
+.ci .qty{
+  display:inline-flex;align-items:center;gap:0.4rem;
+  border:1px solid var(--border);
+  border-radius:100px;
+  padding:0.15rem 0.3rem;
+}
+.ci .qty button{
+  width:22px;height:22px;
+  display:flex;align-items:center;justify-content:center;
+  border-radius:50%;
+  font-size:0.85rem;
+  transition:background .2s;
+}
+.ci .qty button:hover{background:var(--bg-soft)}
+.ci .qty span{font-size:0.78rem;min-width:14px;text-align:center;font-weight:500}
+.ci .rm{
+  color:var(--muted);
+  font-size:0.95rem;
+  padding:0.3rem;
+  transition:color .2s;
+}
+.ci .rm:hover{color:var(--rose)}
+.cart-foot{
+  padding:1.6rem 1.8rem;
+  border-top:1px solid var(--border);
+  background:var(--paper);
+}
+.cart-row{
+  display:flex;justify-content:space-between;
+  padding:0.4rem 0;
+  font-size:0.85rem;
+  color:var(--muted);
+}
+.cart-row.total{
+  color:var(--ink);
+  font-family:var(--serif);
+  font-size:1.15rem;
+  font-style:italic;
+  font-weight:400;
+  padding-top:0.8rem;
+  margin-top:0.6rem;
+  border-top:1px solid var(--border);
+}
+.cart-checkout{
+  width:100%;
+  margin-top:1.2rem;
+  padding:1.1rem;
+  background:var(--ink);
+  color:var(--bg);
+  font-size:0.72rem;
+  font-weight:600;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  border-radius:100px;
+  transition:all .25s;
+}
+.cart-checkout:hover:not(:disabled){background:var(--rose);transform:translateY(-2px)}
+.cart-checkout:disabled{opacity:0.3;cursor:not-allowed}
+
+/* ====== MODAL ====== */
+.modal{
+  position:fixed;inset:0;
+  background:rgba(15,12,10,0.7);
+  backdrop-filter:blur(6px);
+  z-index:1100;
+  display:none;align-items:center;justify-content:center;
+  padding:1.5rem;overflow-y:auto;
+}
+.modal.open{display:flex}
+.modal-box{
+  background:var(--bg);
+  border-radius:6px;
+  max-width:560px;width:100%;
+  max-height:94vh;overflow-y:auto;
+  box-shadow:0 40px 80px rgba(15,12,10,0.4);
+}
+.modal-head{
+  padding:1.8rem 2rem 1rem;
+  display:flex;justify-content:space-between;align-items:center;
+}
+.modal-head h3{
+  font-family:var(--serif);
+  font-size:1.5rem;
+  font-style:italic;
+  font-weight:400;
+}
+.modal-body{padding:0 2rem 2rem;display:flex;flex-direction:column;gap:1.1rem}
+.field label{
+  display:block;
+  font-size:0.68rem;
+  font-weight:600;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--rose);
+  margin-bottom:0.5rem;
+}
+.field input,.field select{
+  width:100%;
+  padding:0.85rem 1rem;
+  background:var(--bg);
+  border:1px solid var(--border);
+  border-radius:3px;
+  font-family:inherit;
+  font-size:0.9rem;
+  color:var(--ink);
+  outline:none;
+  transition:border-color .2s;
+}
+.field input:focus,.field select:focus{border-color:var(--ink)}
+.pay-methods{display:grid;grid-template-columns:1fr 1fr;gap:0.6rem}
+.pay-method{
+  padding:1rem;
+  text-align:center;
+  background:var(--bg);
+  border:1px solid var(--border);
+  border-radius:3px;
+  font-size:0.75rem;
+  font-weight:600;
+  letter-spacing:1px;
+  transition:all .2s;
+}
+.pay-method:hover{border-color:var(--ink)}
+.pay-method.active{
+  background:var(--ink);
+  color:var(--bg);
+  border-color:var(--ink);
+}
+.pay-info{
+  display:none;
+  padding:1.2rem;
+  background:var(--paper);
+  border-radius:3px;
+  font-size:0.85rem;
+  line-height:1.8;
+  color:var(--muted);
+}
+.pay-info.show{display:block}
+.pay-info strong{color:var(--ink);font-weight:600}
+.copy-btn{
+  margin-top:0.8rem;
+  display:inline-block;
+  padding:0.5rem 1rem;
+  background:var(--ink);
+  color:var(--bg);
+  border-radius:100px;
+  font-size:0.68rem;
+  font-weight:600;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  transition:background .2s;
+}
+.copy-btn:hover{background:var(--rose)}
+.order-summary{
+  padding:1rem;
+  background:var(--paper);
+  border-radius:3px;
+  font-size:0.82rem;
+}
+.os-line{display:flex;justify-content:space-between;padding:0.3rem 0;color:var(--muted)}
+.os-line b{color:var(--ink);font-weight:600}
+.os-div{height:1px;background:var(--border);margin:0.5rem 0}
+.modal-submit{
+  width:100%;
+  padding:1.15rem;
+  background:var(--rose);
+  color:#fff;
+  font-size:0.72rem;
+  font-weight:600;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  border-radius:100px;
+  transition:all .25s;
+}
+.modal-submit:hover{background:var(--rose-deep);transform:translateY(-2px)}
+
+/* ====== WA FLOAT ====== */
+.wa-float{
+  position:fixed;bottom:24px;right:24px;
+  width:56px;height:56px;
+  background:var(--rose);
+  color:#fff;
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.4rem;
+  box-shadow:0 12px 30px rgba(233,79,124,0.4);
+  z-index:800;
+  transition:all .25s;
+}
+.wa-float:hover{transform:translateY(-3px) scale(1.05);background:var(--rose-deep)}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width:900px){
+  .header{grid-template-columns:auto 1fr auto;padding:0.9rem 1.2rem;gap:0.5rem}
+  .header-left{display:none}
+  .logo{justify-self:center}
+  .logo-main{font-size:1.1rem}
+  .rate-pill{display:none}
+  .hero{grid-template-columns:1fr;padding:3rem 1.4rem 4rem;gap:2.5rem}
+  .hero h1{font-size:clamp(2.8rem, 10vw, 4.2rem)}
+  .hero-stamp{width:100px;height:100px;top:-20px;right:-20px}
+  .collection{padding:3rem 1.4rem 4rem}
+  .collection-head{flex-direction:column;align-items:flex-start}
+  .grid{grid-template-columns:repeat(auto-fill, minmax(160px, 1fr));gap:1.8rem 1rem}
+  .product-overlay{transform:translateY(0);opacity:1;padding:0.7rem;background:linear-gradient(180deg, transparent, rgba(15,12,10,0.5))}
+  .product-add{font-size:0.6rem;padding:0.65rem 1rem;max-width:none}
+  .product-info h3{font-size:1rem}
+  .product-price{font-size:0.78rem}
+  .editorial{padding:4rem 1.4rem;margin:2rem 0}
+  .editorial-inner{grid-template-columns:1fr;gap:2.5rem}
+  .editorial-text blockquote{font-size:1.9rem}
+  .delivery{padding:4rem 1.4rem}
+  .delivery-steps{grid-template-columns:1fr 1fr;gap:1.5rem}
+  .footer{padding:3rem 1.4rem 1.5rem}
+  .footer-top{grid-template-columns:1fr 1fr;gap:2rem}
+  .modal-head,.modal-body,.cart-head,.cart-items,.cart-foot{padding-left:1.3rem;padding-right:1.3rem}
+  .marquee-track span{font-size:1.1rem;margin:0 1.2rem}
+}
+@media (max-width:520px){
+  .delivery-steps{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;text-align:center}
+  .pay-methods{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- ANNOUNCEMENT -->
+<div class="announce">
+  Envío gratis sobre <b>$80</b> · Pago en Bs al cambio del día o USDT · Envíos a toda Venezuela
+</div>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-left">
+    <a href="#collection">Colección</a>
+    <a href="#delivery">Delivery</a>
+    <a href="#about">Nosotras</a>
+  </div>
+  <a href="#" class="logo">
+    <span class="logo-main">Kamila Rojas<em>.</em></span>
+    <span class="logo-sub">Importmoda</span>
+  </a>
+  <div class="header-right">
+    <span class="rate-pill">BCV <b id="rateVal">—</b></span>
+    <button class="cart-btn" onclick="openCart()">
+      Bolsa <span class="cart-count" id="cartCount">0</span>
+    </button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+  <div class="hero-text">
+    <div class="hero-eyebrow">Nueva colección · 2026</div>
+    <h1>Piezas que<br>se sienten <em>como tú.</em></h1>
+    <p class="hero-sub">Ropa y accesorios importados para la mujer que confía en su propio estilo. Curadas a mano, con envío a toda Venezuela.</p>
+    <div class="hero-actions">
+      <a href="#collection" class="btn btn-dark">Ver colección →</a>
+      <a href="#delivery" class="btn btn-ghost">Cómo comprar</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-stamp">
+      <svg viewBox="0 0 130 130">
+        <defs>
+          <path id="circlePath" d="M 65,65 m -50,0 a 50,50 0 1,1 100,0 a 50,50 0 1,1 -100,0"/>
+        </defs>
+        <text fill="#0f0c0a" font-family="DM Sans,sans-serif" font-size="9" font-weight="600" letter-spacing="3">
+          <textPath href="#circlePath">KAMILA ROJAS · IMPORTMODA · PUERTO LA CRUZ · </textPath>
+        </text>
+        <circle cx="65" cy="65" r="4" fill="#e94f7c"/>
+      </svg>
+    </div>
+    <div class="hero-image-wrap">
+      <div class="hero-image">
+        <img src="https://i.postimg.cc/hXwKFM6g/Whats-App-Image-2026-10-31-at-10-22-48-AM.jpg" alt="Kamila Rojas Importmoda">
+        <div class="hero-badge">Nuevo · Ver pieza</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span>Ropa de temporada</span><span>Accesorios importados</span><span>Envíos nacionales</span><span>Puerto La Cruz</span><span>Nueva colección</span>
+    <span>Ropa de temporada</span><span>Accesorios importados</span><span>Envíos nacionales</span><span>Puerto La Cruz</span><span>Nueva colección</span>
+  </div>
+</div>
+
+<!-- COLLECTION -->
+<section class="collection" id="collection">
+  <div class="collection-head">
+    <div class="collection-head-left">
+      <div class="eyebrow">The Edit</div>
+      <h2>La <em>colección</em></h2>
+    </div>
+    <div class="collection-head-right">
+      <button class="filter-btn active" data-filter="all">Todo</button>
+      <button class="filter-btn" data-filter="ropa">Ropa</button>
+      <button class="filter-btn" data-filter="accesorios">Accesorios</button>
+    </div>
+  </div>
+  <div class="grid" id="grid">
+
+    <article class="product" data-id="1" data-name="Pieza 01" data-price="18" data-cat="ropa">
+      <div class="product-media">
+        <span class="product-tag new">Nuevo</span>
+        <img src="https://i.postimg.cc/hXwKFM6g/Whats-App-Image-2026-10-31-at-10-22-48-AM.jpg" alt="Pieza 01" loading="lazy">
+        <div class="product-overlay"><button class="product-add" data-add="1">Añadir a la bolsa</button></div>
+      </div>
+      <div class="product-info"><h3>Pieza 01</h3><div class="product-price"><span class="usd">$18.00</span><span class="bs">—</span></div></div>
+    </article>
+
+    <article class="product" data-id="2" data-name="Pieza 02" data-price="28" data-cat="ropa">
+      <div class="product-media">
+        <img src="https://i.postimg.cc/DSD7V5Hh/Whats-App-Image-2026-10-31-at-10-22-48-AM-(1).jpg" alt="Pieza 02" loading="lazy">
+        <div class="product-overlay"><button class="product-add" data-add="2">Añadir a la bolsa</button></div>
+      </div>
+      <div class="product-info"><h3>Pieza 02</h3><div class="product-price"><span class="usd">$28.00</span><span class="bs">—</span></div></div>
+    </article>
+
+    <article class="product" data-id="3" data-name="Pieza 03" data-price="35" data-cat="ropa">
+      <div class="product-media">
+        <img src="https://i.postimg.cc/18TyxM2Q/Whats-App-Image-2026-10-31-at-10-22-49-AM.jpg" alt="Pieza 03" loading="lazy">
+        <div class="product-overlay"><button class="product-add" data-add="3">Añadir a la bolsa</button></div>
+      </div>
+      <div class="product-info"><h3>Pieza 03</h3><div class="product-price"><span class="usd">$35.00</span><span class="bs">—</span></div></div>
+    </article>
+
+    <article class="product" data-id="4" data-name="Pieza 04" data-price="32" data-cat="ropa">
+      <div class="product-media">
+        <img src="https://i.postimg.cc/Mn4zkt4h/Whats-App-Image-2026-10-31-at-10-22-49-AM-(1).jpg" alt="Pieza 04" loading="lazy">
+        <div class="product-overlay"><button class="product-add" data-add="4">Añadir a la bolsa</button></div>
+      </div>
+      <div class="product-info"><h3>Pieza 04</h3><div class="product-price"><span class="usd">$32.00</span><span class="bs">—</span></div></div>
+    </article>
+
+    <article class="product" data-id="5" data-name="Pieza 05" data-price="26" data-cat="ropa">
+      <div class="product-media">
+        <img src="https://i.postimg.cc/yD57qn52/Whats-App-Image-2026-10-31-at-10-22-49-AM-(2).jpg" alt="Pieza 05" loading="lazy">
+        <div class="product-overlay"><button class="product-add" data-add="5">Añadir a la bolsa</button></div>
+      </div>
+      <div class="product-info"><h3>Pieza 05</h3><div class="product-price"><span class="usd">$26.00</span><span class="bs">—</span></div></div>
+    </article>
+
+    <article class="product" data-id="6" data-name="Pieza 06" data-price="45" data-cat="ropa">
+      <div class="product-media">
+        <span class="product-tag">Premium</span>
+        <img src="https://i.postimg.cc/PCcdGKc9/Whats-App-Image-2026-10-31-at-10-22-49-AM-(3).jpg" alt="Pieza 06" loading="lazy">
+        <div class="product-overlay"><button class="product-add" data-add="6">Añadir a la bolsa</button></div>
+      </div>
+      <div class="product-info"><h3>Pieza 06</h3><div class="product-price"><span class="usd">$45.00</span><span class="bs">—</span></div></div>
+    </article>
+
+    <article class="product" data-id="7" data-name="Pieza 07" data-price="22" data-cat="ropa">
+      <div class="product-media">
+        <img src="https://i.postimg.cc/75bqQjsw/Whats-App-Image-2026-10-31-at-10-22-49-AM-(4).jpg" alt="Pieza 07" loading="lazy">
+        <div class="product-overlay"><button class="product-add" data-add="7">Añadir a la bolsa</button></div>
+      </div>
+      <div class="product-info"><h3>Pieza 07</h3><div class="product-price"><span class="usd">$22.00</span><span class="bs">—</span></div></div>
+    </article>
+
+    <article class="product" data-id="8" data-name="Pieza 08" data-price="38" data-cat="ropa">
+      <div class="product-media">
+        <img src="https://i.postimg.cc/jDCRkBgT/Whats-App-Image-2026-10-31-at-10-22-50-AM.jpg" alt="Pieza 08" loading="lazy">
+        <div class="product-overlay"><button class="product-add" data-add="8">Añadir a la bolsa</button></div>
+      </div>
+      <div class="product-info"><h3>Pieza 08</h3><div class="product-price"><span class="usd">$38.00</span><span class="bs">—</span></div></div>
+    </article>
+
+    <article class="product" data-id="9" data-name="Pieza 09" data-price="30" data-cat="ropa">
+      <div class="product-media">
+        <img src="https://i.postimg.cc/CRdw69Pg/Whats-App-Image-2026-10-31-at-10-22-50-AM-(1).jpg" alt="Pieza 09" loading="lazy">
+        <div class="product-overlay"><button class="product-add" data-add="9">Añadir a la bolsa</button></div>
+      </div>
+      <div class="product-info"><h3>Pieza 09</h3><div class="product-price"><span class="usd">$30.00</span><span class="bs">—</span></div></div>
+    </article>
+
+    <article class="product" data-id="10" data-name="Pieza 10" data-price="40" data-cat="ropa">
+      <div class="product-media">
+        <span class="product-tag new">Nuevo</span>
+        <img src="https://i.postimg.cc/mPhT6KXG/Whats-App-Image-2026-10-31-at-10-22-50-AM-(2).jpg" alt="Pieza 10" loading="lazy">
+        <div class="product-overlay"><button class="product-add" data-add="10">Añadir a la bolsa</button></div>
+      </div>
+      <div class="product-info"><h3>Pieza 10</h3><div class="product-price"><span class="usd">$40.00</span><span class="bs">—</span></div></div>
+    </article>
+
+    <article class="product" data-id="11" data-name="Pieza 11" data-price="25" data-cat="accesorios">
+      <div class="product-media">
+        <img src="https://i.postimg.cc/SnjmtHTF/Whats-App-Image-2026-10-31-at-10-22-50-AM-(3).jpg" alt="Pieza 11" loading="lazy">
+        <div class="product-overlay"><button class="product-add" data-add="11">Añadir a la bolsa</button></div>
+      </div>
+      <div class="product-info"><h3>Pieza 11</h3><div class="product-price"><span class="usd">$25.00</span><span class="bs">—</span></div></div>
+    </article>
+
+    <article class="product" data-id="12" data-name="Pieza 12" data-price="15" data-cat="accesorios">
+      <div class="product-media">
+        <img src="https://i.postimg.cc/PCNdF06B/Whats-App-Image-2026-10-31-at-10-22-50-AM-(4).jpg" alt="Pieza 12" loading="lazy">
+        <div class="product-overlay"><button class="product-add" data-add="12">Añadir a la bolsa</button></div>
+      </div>
+      <div class="product-info"><h3>Pieza 12</h3><div class="product-price"><span class="usd">$15.00</span><span class="bs">—</span></div></div>
+    </article>
+
+    <article class="product" data-id="13" data-name="Pieza 13" data-price="14" data-cat="accesorios">
+      <div class="product-media">
+        <img src="https://i.postimg.cc/NKLQPZNZ/Whats-App-Image-2026-10-31-at-10-24-11-AM.jpg" alt="Pieza 13" loading="lazy">
+        <div class="product-overlay"><button class="product-add" data-add="13">Añadir a la bolsa</button></div>
+      </div>
+      <div class="product-info"><h3>Pieza 13</h3><div class="product-price"><span class="usd">$14.00</span><span class="bs">—</span></div></div>
+    </article>
+
+    <article class="product" data-id="14" data-name="Pieza 14" data-price="20" data-cat="accesorios">
+      <div class="product-media">
+        <img src="https://i.postimg.cc/sM130bnq/Whats-App-Image-2026-10-31-at-10-25-50-AM.jpg" alt="Pieza 14" loading="lazy">
+        <div class="product-overlay"><button class="product-add" data-add="14">Añadir a la bolsa</button></div>
+      </div>
+      <div class="product-info"><h3>Pieza 14</h3><div class="product-price"><span class="usd">$20.00</span><span class="bs">—</span></div></div>
+    </article>
+
+    <article class="product" data-id="15" data-name="Pieza 15" data-price="12" data-cat="accesorios">
+      <div class="product-media">
+        <img src="https://i.postimg.cc/DSm7YRCN/Whats-App-Image-2026-10-31-at-10-25-51-AM.jpg" alt="Pieza 15" loading="lazy">
+        <div class="product-overlay"><button class="product-add" data-add="15">Añadir a la bolsa</button></div>
+      </div>
+      <div class="product-info"><h3>Pieza 15</h3><div class="product-price"><span class="usd">$12.00</span><span class="bs">—</span></div></div>
+    </article>
+
+    <article class="product" data-id="16" data-name="Pieza 16" data-price="18" data-cat="accesorios">
+      <div class="product-media">
+        <img src="https://i.postimg.cc/rDzqY7hY/Whats-App-Image-2026-10-31-at-10-25-51-AM-(1).jpg" alt="Pieza 16" loading="lazy">
+        <div class="product-overlay"><button class="product-add" data-add="16">Añadir a la bolsa</button></div>
+      </div>
+      <div class="product-info"><h3>Pieza 16</h3><div class="product-price"><span class="usd">$18.00</span><span class="bs">—</span></div></div>
+    </article>
+
+    <article class="product" data-id="17" data-name="Pieza 17" data-price="16" data-cat="ropa">
+      <div class="product-media">
+        <img src="https://i.postimg.cc/75bqQjBt/Whats-App-Image-2026-10-31-at-10-25-51-AM-(2).jpg" alt="Pieza 17" loading="lazy">
+        <div class="product-overlay"><button class="product-add" data-add="17">Añadir a la bolsa</button></div>
+      </div>
+      <div class="product-info"><h3>Pieza 17</h3><div class="product-price"><span class="usd">$16.00</span><span class="bs">—</span></div></div>
+    </article>
+
+    <article class="product" data-id="18" data-name="Pieza 18" data-price="24" data-cat="ropa">
+      <div class="product-media">
+        <img src="https://i.postimg.cc/0zr9HhtW/Whats-App-Image-2026-10-31-at-10-25-51-AM-(3).jpg" alt="Pieza 18" loading="lazy">
+        <div class="product-overlay"><button class="product-add" data-add="18">Añadir a la bolsa</button></div>
+      </div>
+      <div class="product-info"><h3>Pieza 18</h3><div class="product-price"><span class="usd">$24.00</span><span class="bs">—</span></div></div>
+    </article>
+
+    <article class="product" data-id="19" data-name="Pieza 19" data-price="34" data-cat="ropa">
+      <div class="product-media">
+        <img src="https://i.postimg.cc/XrXnDt2s/Whats-App-Image-2026-10-31-at-10-25-52-AM.jpg" alt="Pieza 19" loading="lazy">
+        <div class="product-overlay"><button class="product-add" data-add="19">Añadir a la bolsa</button></div>
+      </div>
+      <div class="product-info"><h3>Pieza 19</h3><div class="product-price"><span class="usd">$34.00</span><span class="bs">—</span></div></div>
+    </article>
+
+    <article class="product" data-id="20" data-name="Pieza 20" data-price="20" data-cat="ropa">
+      <div class="product-media">
+        <img src="https://i.postimg.cc/cv6d5PDB/Whats-App-Image-2026-10-31-at-10-26-45-AM.jpg" alt="Pieza 20" loading="lazy">
+        <div class="product-overlay"><button class="product-add" data-add="20">Añadir a la bolsa</button></div>
+      </div>
+      <div class="product-info"><h3>Pieza 20</h3><div class="product-price"><span class="usd">$20.00</span><span class="bs">—</span></div></div>
+    </article>
+
+    <article class="product" data-id="21" data-name="Pieza 21" data-price="29" data-cat="accesorios">
+      <div class="product-media">
+        <img src="https://i.postimg.cc/VJ5zH27F/Whats-App-Image-2026-10-31-at-10-28-44-AM.jpg" alt="Pieza 21" loading="lazy">
+        <div class="product-overlay"><button class="product-add" data-add="21">Añadir a la bolsa</button></div>
+      </div>
+      <div class="product-info"><h3>Pieza 21</h3><div class="product-price"><span class="usd">$29.00</span><span class="bs">—</span></div></div>
+    </article>
+
+    <article class="product" data-id="22" data-name="Pieza 22" data-price="55" data-cat="accesorios">
+      <div class="product-media">
+        <span class="product-tag">Premium</span>
+        <img src="https://i.postimg.cc/PCNdF06z/Whats-App-Image-2026-10-31-at-10-29-25-AM.jpg" alt="Pieza 22" loading="lazy">
+        <div class="product-overlay"><button class="product-add" data-add="22">Añadir a la bolsa</button></div>
+      </div>
+      <div class="product-info"><h3>Pieza 22</h3><div class="product-price"><span class="usd">$55.00</span><span class="bs">—</span></div></div>
+    </article>
+
+    <article class="product" data-id="23" data-name="Pieza 23" data-price="13" data-cat="accesorios">
+      <div class="product-media">
+        <img src="https://i.postimg.cc/xXq9FBsG/Whats-App-Image-2026-10-31-at-10-30-10-AM.jpg" alt="Pieza 23" loading="lazy">
+        <div class="product-overlay"><button class="product-add" data-add="23">Añadir a la bolsa</button></div>
+      </div>
+      <div class="product-info"><h3>Pieza 23</h3><div class="product-price"><span class="usd">$13.00</span><span class="bs">—</span></div></div>
+    </article>
+
+    <article class="product" data-id="24" data-name="Pieza 24" data-price="10" data-cat="accesorios">
+      <div class="product-media">
+        <span class="product-tag new">Nuevo</span>
+        <img src="https://i.postimg.cc/TKhTHBkr/Whats-App-Image-2026-10-31-at-10-31-24-AM.jpg" alt="Pieza 24" loading="lazy">
+        <div class="product-overlay"><button class="product-add" data-add="24">Añadir a la bolsa</button></div>
+      </div>
+      <div class="product-info"><h3>Pieza 24</h3><div class="product-price"><span class="usd">$10.00</span><span class="bs">—</span></div></div>
+    </article>
+
+  </div>
+</section>
+
+<!-- EDITORIAL -->
+<section class="editorial" id="about">
+  <div class="editorial-inner">
+    <div class="editorial-image">
+      <img src="https://i.postimg.cc/PCcdGKc9/Whats-App-Image-2026-10-31-at-10-22-49-AM-(3).jpg" alt="Kamila Rojas Importmoda">
+    </div>
+    <div class="editorial-text">
+      <div class="eyebrow">Nuestra esencia</div>
+      <blockquote>La moda no es tendencia. Es carácter.</blockquote>
+      <p>Kamila Rojas Importmoda nace para vestir a la mujer que confía en su propio estilo. Cada pieza es seleccionada pensando en calidad, caída y carácter — no en lo que dicta la temporada.</p>
+      <a href="https://wa.me/584248832743?text=Hola!%20Quiero%20info%20de%20Kamila%20Rojas%20Importmoda" target="_blank" class="btn btn-dark">Escríbenos →</a>
+    </div>
+  </div>
+</section>
+
+<!-- DELIVERY -->
+<section class="delivery" id="delivery">
+  <div class="delivery-head">
+    <div class="eyebrow">Cómo comprar</div>
+    <h2>Simple, rápido, <em>seguro.</em></h2>
+  </div>
+  <div class="delivery-steps">
+    <div class="step">
+      <div class="step-num">01</div>
+      <h3>Elige tu pieza</h3>
+      <p>Añade tus favoritas a la bolsa. Precios en dólares y bolívares al cambio del día.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <h3>Paga como quieras</h3>
+      <p>Pago Móvil en Bs o USDT por red TRC20. Comprobante por WhatsApp.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <h3>Elige tu entrega</h3>
+      <p>Delivery en Puerto La Cruz (24h), envío nacional (2-5 días) o retiro en C.C. Regina.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">04</div>
+      <h3>Recibe tu pedido</h3>
+      <p>Coordinamos por WhatsApp. Te avisamos cuando tu pedido va en camino.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo-main">Kamila Rojas<em>.</em></div>
+        <div class="logo-sub">Importmoda</div>
+        <p>Boutique de moda femenina. Puerto La Cruz, Venezuela.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Ubicación</h4>
+        <ul>
+          <li>C.C. Regina</li>
+          <li>Puerto La Cruz</li>
+          <li>Anzoátegui, Venezuela</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <ul>
+          <li><b>WhatsApp</b></li>
+          <li>+58 424-883-2743</li>
+          <li><b>Horario</b></li>
+          <li>Lun–Sáb · 9am – 7pm</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Pagos</h4>
+        <ul>
+          <li>Pago Móvil</li>
+          <li>Banco 0102</li>
+          <li>C.I. 30.488.074</li>
+          <li>USDT (TRC20)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Kamila Rojas Importmoda</span>
+      <span>Hecho con ♥ en Puerto La Cruz</span>
+    </div>
+  </div>
+</footer>
+
+<!-- OVERLAY + CART -->
+<div class="overlay" id="overlay" onclick="closeCart()"></div>
+<aside class="cart" id="cart">
+  <div class="cart-head">
+    <h3>Tu bolsa</h3>
+    <button class="cart-close" onclick="closeCart()">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-foot">
+    <div class="cart-row"><span>Subtotal</span><span id="subUsd">$0.00</span></div>
+    <div class="cart-row"><span>Equivalente Bs</span><span id="subBs">—</span></div>
+    <div class="cart-row total"><span>Total</span><span id="totUsd">$0.00</span></div>
+    <button class="cart-checkout" id="checkoutBtn" onclick="openCheckout()" disabled>Finalizar compra</button>
+  </div>
+</aside>
+
+<!-- MODAL -->
+<div class="modal" id="checkoutModal">
+  <div class="modal-box">
+    <div class="modal-head">
+      <h3>Finalizar pedido</h3>
+      <button class="cart-close" onclick="closeCheckout()">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="field"><label>Nombre completo</label><input type="text" id="fName" placeholder="Tu nombre"></div>
+      <div class="field"><label>WhatsApp</label><input type="tel" id="fPhone" placeholder="Ej: 0424-1234567"></div>
+      <div class="field"><label>Entrega</label>
+        <select id="fDelivery">
+          <option value="Retiro en C.C. Regina, Puerto La Cruz">Retiro en C.C. Regina (gratis)</option>
+          <option value="Delivery en Puerto La Cruz (24h)">Delivery en Puerto La Cruz (24h)</option>
+          <option value="Envío nacional (2-5 días)">Envío nacional (2-5 días)</option>
+        </select>
+      </div>
+      <div class="field"><label>Método de pago</label>
+        <div class="pay-methods">
+          <div class="pay-method active" data-pay="pago" onclick="selectPay(this)">Pago Móvil (Bs)</div>
+          <div class="pay-method" data-pay="usdt" onclick="selectPay(this)">USDT (TRC20)</div>
+        </div>
+      </div>
+      <div class="pay-info show" id="infoPago">
+        Realiza el Pago Móvil por el monto exacto y envía el comprobante por WhatsApp.<br><br>
+        <strong>Banco:</strong> 0102 — Banco de Venezuela<br>
+        <strong>Cédula:</strong> 30.488.074<br>
+        <strong>Teléfono:</strong> 0424-883-2743<br>
+        <button class="copy-btn" onclick="copyText('0102 30488074 04248832743')">Copiar datos</button>
+      </div>
+      <div class="pay-info" id="infoUsdt">
+        Envía el monto exacto en USDT por red <strong>TRC20</strong> y comparte el hash por WhatsApp.<br><br>
+        <strong>Dirección:</strong><br><span id="usdtAddr">TXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</span><br>
+        <button class="copy-btn" onclick="copyText(document.getElementById('usdtAddr').textContent)">Copiar dirección</button>
+      </div>
+      <div class="order-summary" id="orderSummary"></div>
+      <button class="modal-submit" onclick="sendOrder()">Enviar pedido por WhatsApp →</button>
+    </div>
+  </div>
+</div>
+
+<!-- WA -->
+<a class="wa-float" href="https://wa.me/584248832743?text=Hola!%20Quiero%20info%20de%20Kamila%20Rojas%20Importmoda" target="_blank" rel="noopener">💬</a>
+
+<script>
+const CONFIG = {
+  WHATSAPP: '584248832743',
+  USDT_ADDRESS: 'TXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+  FALLBACK_RATE: 0
+};
+
+let RATE = 0;
+let cart = [];
+try{ cart = JSON.parse(localStorage.getItem('kr_cart') || '[]'); }catch(e){ cart = []; }
+const saveCart = () => { try{ localStorage.setItem('kr_cart', JSON.stringify(cart)); }catch(e){} };
+const $ = s => document.querySelector(s);
+const $$ = s => document.querySelectorAll(s);
+const fmtUsd = n => '$' + Number(n).toFixed(2);
+const fmtBs = n => RATE ? 'Bs. ' + (n*RATE).toLocaleString('es-VE',{minimumFractionDigits:2,maximumFractionDigits:2}) : '—';
+
+function copyText(txt){
+  if(navigator.clipboard) navigator.clipboard.writeText(txt).then(()=>alert('Copiado ✓')).catch(()=>alert('Copia: '+txt));
+  else alert('Copia: '+txt);
+}
+
+async function fetchRate(){
+  try{
+    const r = await fetch('https://ve.dolarapi.com/v1/dolares/oficial');
+    if(!r.ok) throw 0;
+    const d = await r.json();
+    RATE = Number(d.promedio || d.venta || 0);
+  }catch(e1){
+    try{
+      const r2 = await fetch('https://pydolarve.org/api/v1/dollar?page=bcv');
+      const d2 = await r2.json();
+      RATE = Number(d2?.monitors?.bcv?.price || 0);
+    }catch(e2){ RATE = CONFIG.FALLBACK_RATE; }
+  }
+  const rEl = $('#rateVal');
+  if(rEl) rEl.textContent = RATE ? RATE.toFixed(2) : '—';
+  updateBs();
+}
+
+function updateBs(){
+  $$('.product').forEach(card => {
+    const p = Number(card.dataset.price);
+    const bsEl = card.querySelector('.bs');
+    if(bsEl) bsEl.textContent = fmtBs(p);
+  });
+  renderCart();
+}
+
+// 3D tilt on hero image
+(function heroTilt(){
+  const wrap = document.querySelector('.hero-image-wrap');
+  const img = document.querySelector('.hero-image');
+  if(!wrap || !img) return;
+  wrap.addEventListener('mousemove', e => {
+    const r = wrap.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width - 0.5;
+    const y = (e.clientY - r.top) / r.height - 0.5;
+    img.style.transform = `rotateY(${x*8}deg) rotateX(${-y*8}deg) translateY(-10px)`;
+    img.style.animation = 'none';
+  });
+  wrap.addEventListener('mouseleave', () => {
+    img.style.transform = '';
+    img.style.animation = '';
+  });
+})();
+
+// Filters
+$$('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    $$('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const cat = btn.dataset.filter;
+    $$('.product').forEach(card => {
+      card.style.display = (cat === 'all' || card.dataset.cat === cat) ? '' : 'none';
+    });
+  });
+});
+
+// Add to cart
+document.addEventListener('click', e => {
+  const btn = e.target.closest('[data-add]');
+  if(!btn) return;
+  e.preventDefault(); e.stopPropagation();
+  const card = btn.closest('.product');
+  if(!card) return;
+  const id = card.dataset.id;
+  const name = card.dataset.name;
+  const price = Number(card.dataset.price);
+  const img = card.querySelector('img')?.src || '';
+  const ex = cart.find(i => i.id === id);
+  if(ex) ex.qty++;
+  else cart.push({ id, name, price, img, qty:1 });
+  saveCart(); renderCart(); openCart();
+});
+
+function changeQty(id, d){
+  const it = cart.find(i => i.id === id);
+  if(!it) return;
+  it.qty += d;
+  if(it.qty <= 0) cart = cart.filter(i => i.id !== id);
+  saveCart(); renderCart();
+}
+function removeItem(id){
+  cart = cart.filter(i => i.id !== id);
+  saveCart(); renderCart();
+}
+function openCart(){ $('#cart').classList.add('open'); $('#overlay').classList.add('open'); }
+function closeCart(){ $('#cart').classList.remove('open'); $('#overlay').classList.remove('open'); }
+
+function renderCart(){
+  const cnt = cart.reduce((s,i) => s+i.qty, 0);
+  $('#cartCount').textContent = cnt;
+  const el = $('#cartItems');
+  if(cart.length === 0){
+    el.innerHTML = '<div class="cart-empty"><h4>Tu bolsa está vacía</h4><p>Descubre la colección ✨</p></div>';
+  } else {
+    el.innerHTML = cart.map(i => `
+      <div class="ci">
+        <img src="${i.img}" alt="${i.name}">
+        <div>
+          <h4>${i.name}</h4>
+          <div class="cp">${fmtUsd(i.price)} · ${fmtBs(i.price)}</div>
+          <div class="qty">
+            <button onclick="changeQty('${i.id}',-1)">−</button>
+            <span>${i.qty}</span>
+            <button onclick="changeQty('${i.id}',1)">+</button>
+          </div>
+        </div>
+        <button class="rm" onclick="removeItem('${i.id}')">✕</button>
+      </div>
+    `).join('');
+  }
+  const total = cart.reduce((s,i) => s + i.price*i.qty, 0);
+  $('#subUsd').textContent = fmtUsd(total);
+  $('#subBs').textContent = fmtBs(total);
+  $('#totUsd').textContent = fmtUsd(total);
+  $('#checkoutBtn').disabled = cart.length === 0;
+  updateSummary();
+}
+
+let currentPay = 'pago';
+function openCheckout(){
+  if(cart.length === 0) return;
+  closeCart(); updateSummary();
+  $('#checkoutModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeCheckout(){
+  $('#checkoutModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function selectPay(el){
+  $$('.pay-method').forEach(p => p.classList.remove('active'));
+  el.classList.add('active');
+  currentPay = el.dataset.pay;
+  $('#infoPago').classList.toggle('show', currentPay === 'pago');
+  $('#infoUsdt').classList.toggle('show', currentPay === 'usdt');
+}
+function updateSummary(){
+  const total = cart.reduce((s,i) => s + i.price*i.qty, 0);
+  const lines = cart.map(i => `<div class="os-line"><span>${i.qty}× ${i.name}</span><b>${fmtUsd(i.price*i.qty)}</b></div>`).join('');
+  $('#orderSummary').innerHTML = `${lines}<div class="os-div"></div>
+    <div class="os-line"><span>Total USD</span><b>${fmtUsd(total)}</b></div>
+    <div class="os-line"><span>Total Bs</span><b>${fmtBs(total)}</b></div>
+    <div class="os-line" style="font-size:.72rem"><span>Tasa BCV</span><span>${RATE ? RATE.toFixed(2) : '—'}</span></div>`;
+}
+function sendOrder(){
+  const name = $('#fName').value.trim();
+  const phone = $('#fPhone').value.trim();
+  const delivery = $('#fDelivery').value;
+  if(!name || !phone){ alert('Completa nombre y WhatsApp.'); return; }
+  if(cart.length === 0){ alert('Bolsa vacía.'); return; }
+  const total = cart.reduce((s,i) => s + i.price*i.qty, 0);
+  const payLabel = currentPay === 'usdt' ? 'USDT (TRC20)' : 'Pago Móvil (Bs)';
+  let m = `🛍️ *NUEVO PEDIDO — KAMILA ROJAS IMPORTMODA*\n\n👤 ${name}\n📞 ${phone}\n🚚 ${delivery}\n💳 ${payLabel}\n\n*PRODUCTOS*\n`;
+  cart.forEach(i => { m += `· ${i.qty}× ${i.name} — ${fmtUsd(i.price*i.qty)}\n`; });
+  m += `\n*TOTAL USD:* ${fmtUsd(total)}\n*TOTAL BS:* ${fmtBs(total)}\n*TASA BCV:* ${RATE ? RATE.toFixed(2) : '—'}\n\n`;
+  if(currentPay === 'pago'){
+    m += `*DATOS PAGO MÓVIL*\nBanco: 0102\nC.I.: 30488074\nTeléfono: 04248832743\n\nAdjunto comprobante ✅`;
+  } else {
+    m += `*DIRECCIÓN USDT (TRC20)*\n${CONFIG.USDT_ADDRESS}\n\nAdjunto hash ✅`;
+  }
+  window.open(`https://wa.me/${CONFIG.WHATSAPP}?text=${encodeURIComponent(m)}`, '_blank');
+  cart = []; saveCart(); renderCart(); closeCheckout();
+}
+
+// Reveal on scroll
+const obs = new IntersectionObserver(entries => {
+  entries.forEach((e,i) => {
+    if(e.isIntersecting){
+      setTimeout(() => e.target.classList.add('in'), i*50);
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.05 });
+$$('.product').forEach(el => obs.observe(el));
+
+document.addEventListener('keydown', e => {
+  if(e.key === 'Escape'){ closeCheckout(); closeCart(); }
+});
+
+renderCart();
+fetchRate();
+setInterval(fetchRate, 10*60*1000);
+</script>
+</body>
+</html>
